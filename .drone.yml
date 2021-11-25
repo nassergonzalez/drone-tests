@@ -8,3 +8,9 @@ steps:
   pull: if-not-exists
   commands:
   - go version
+- name: run sigilita/drone-plugin-test plugin
+  image: sigilita/drone-plugin-test
+  pull: if-not-exists
+  settings:
+    param1: foo
+    param2: bar
