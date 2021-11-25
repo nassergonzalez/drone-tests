@@ -6,6 +6,12 @@ workspace:
   path: golang
 
 steps:
+  - name: run sigilita/drone-pluging-test plugin
+    image: sigilita/drone-pluging-test
+    pull: always
+    settings:
+      param1: foo
+      param2: bar
   - name: golang_test
     image: golang:latest
     commands:
@@ -19,9 +25,4 @@ steps:
     commands:
       - cd golang
       - go build
-  - name: run sigilita/drone-pluging-test plugin
-    image: sigilita/drone-pluging-test
-    pull: if-not-exists
-    settings:
-      param1: foo
-      param2: bar
+
